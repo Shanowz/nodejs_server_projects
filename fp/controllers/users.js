@@ -14,6 +14,7 @@ exports.findById = function(req, res){
 };
 
 exports.isLoginOk = function(req, res){
+    console.log("is login ok");
 	  var emailValue = req.params.email;
 	  var passwordValue = req.params.password;
 
