@@ -39,4 +39,4 @@ app.put('/facepoker/users/:id', fp_users.update);
 app.delete('/facepoker/users/:id', fp_users.delete);
 
 app.listen(80);
-console.log('Listening on port 8080...');
+console.log('Listening on port 80...');
