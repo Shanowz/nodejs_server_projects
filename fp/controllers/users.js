@@ -2,11 +2,13 @@ var mongoose = require('mongoose'),
 User = mongoose.model('User');
 
 exports.findAll = function(req, res){
+    console.log("facepoker find all");
   User.find({},function(err, results) {
     return res.send(results);
   });
 };
 exports.findById = function(req, res){
+    console.log("facepoker find by id");
   var id = req.params.id;
   User.findOne({'_id':id},function(err, result) {
     return res.send(result);
@@ -14,7 +16,7 @@ exports.findById = function(req, res){
 };
 
 exports.isLoginOk = function(req, res){
-    console.log("is login ok");
+    console.log("facepoker is login ok");
 	  var emailValue = req.params.email;
 	  var passwordValue = req.params.password;
 
@@ -40,6 +42,7 @@ exports.isLoginOk = function(req, res){
 
 
 exports.add = function(req, res){
+    console.log("facepoker add");
 	 var chips = 2000
   var emailValue = req.params.email;
   var passwordValue = req.params.password;
@@ -54,11 +57,8 @@ exports.add = function(req, res){
   });
 };
 
-
-
-
-
 exports.update = function(req, res) {
+    console.log("facepoker update");
   var id = req.params.id;
   var updates = req.body;
 
@@ -70,6 +70,7 @@ exports.update = function(req, res) {
   });
 }
 exports.delete = function(req, res){
+    console.log("facepoker delete");
   var id = req.params.id;
   Musician.remove({'_id':id},function(result) {
     return res.send(result);
