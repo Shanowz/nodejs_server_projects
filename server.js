@@ -25,18 +25,18 @@ console.log("request");
 
 //omk routes
 //--users
-app.post('/omk/users', omk_db.insert_user);
-app.get('/omk/users', omk_db.is_element_exists);
+app.post('/omk/user', omk_db.insert_user);
+app.get('/omk/user', omk_db.is_element_exists);
 
 //faceP routes
 //--users
 var fp_users = require('./fp/controllers/users');
-app.get('facepoker/users', fp_users.findAll);
-app.get('facepoker/users/:id', fp_users.findById);
-app.post('facepoker/user/:email?&password=:password&username=:username', fp_users.add);
-app.get('facepoker/user/:email?&password=:password', fp_users.isLoginOk);
-app.put('facepoker/users/:id', fp_users.update);
-app.delete('facepoker/users/:id', fp_users.delete);
+app.get('/facepoker/users', fp_users.findAll);
+app.get('/facepoker/users/:id', fp_users.findById);
+app.post('/facepoker/user/:email?&password=:password&username=:username', fp_users.add);
+app.get('/facepoker/user/:email?&password=:password', fp_users.isLoginOk);
+app.put('/facepoker/users/:id', fp_users.update);
+app.delete('/facepoker/users/:id', fp_users.delete);
 
 app.listen(80);
 console.log('Listening on port 8080...');
