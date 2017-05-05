@@ -38,5 +38,5 @@ app.get('/user/:email?&password=:password', fp_users.isLoginOk);
 app.put('/users/:id', fp_users.update);
 app.delete('/users/:id', fp_users.delete);
 
-app.listen(8080);
+app.listen(80);
 console.log('Listening on port 8080...');
